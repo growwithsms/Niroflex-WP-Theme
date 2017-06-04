@@ -1,0 +1,22 @@
+
+// ----
+// Helper classes
+// ----
+
+// These are non-semantic classes for quick formatting. In theory, it's best to remove these for production, but you know, in theory.
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.hidden {
+	display: none;
+}

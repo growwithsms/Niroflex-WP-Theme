@@ -1,0 +1,66 @@
+.nav-main {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.75s ease;
+	position: relative;
+	z-index: 100;
+	&.active {
+		max-height: $screen-md;
+	}
+
+	@include bp(md) {
+		max-height: none;
+		overflow: visible;
+	}
+}
+
+.nav-items {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	@include bp(md) {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		& > li {
+			white-space: nowrap;
+    		text-align: center;
+    		position: relative;
+    		> ul {
+    			opacity: 0;
+    			visibility: hidden;
+    			transition: all 200ms ease;
+    			position: absolute;
+    			top: 100%;
+    			left: 0;
+    			margin: 0;
+    			padding: 0;
+    			list-style: none;
+    			min-width: 100%;
+    			background: #fff;
+    			box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+    		}
+    		&:hover > ul {
+    			opacity: 1;
+    			visibility: visible;
+    		}
+		}
+	}
+}
+
+.nav-item-link,
+.nav-link {
+	padding: .6rem $size-base;
+	display: block;
+	color: #fff;
+}
+
+// Link to open the nav
+.nav-trigger {
+
+	@include bp(md) {
+		display: none;
+	}
+
+}

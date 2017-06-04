@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<section class="article-content">
+			<div class="article-header" {% if post.thumbnail.src %} style="background-image: url('{{post.thumbnail.src}}');"{% endif %}>
+				<div class="wrapper">
+					<h1>{{post.title}}</h1>
+				</div>
+			</div>
+			<div class="article-body wrapper">
+				{{post.content}}
+				<div class="columns is-multiline">
+					{% for resource in post.get_field('resources') %}
+				        <div class="column is-one-third">
+				        	<a href="{{resource.url}}">
+					        	<figure class="text-center">
+						            <img src="{{TimberImage(resource.image).src('medium')}}" alt="{{resource.title}}">
+						            <figcaption>
+						            	<p>{{resource.title}}</p>
+						            </figcaption>
+						        </figure>
+						    </a>
+				        </div>
+				    {% endfor %}
+				</div>
+			</div>
+		</section>
+	</article>
+{% endblock %}

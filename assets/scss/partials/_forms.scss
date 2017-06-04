@@ -1,0 +1,77 @@
+
+// ---
+// Forms
+// ---
+
+// Forms styles here!
+
+// See some responsive form strategies here:
+// http://bradfrost.github.io/this-is-responsive/patterns.html
+// Actually, just use all of those strategies.
+
+// Here are the basic form selectors I usually style:
+// (much inspired by the setup from http://themble.com/bones)
+
+// Remove the blue outline from Chrome and replace with something nicer.
+*:focus {
+    outline: 1px dotted #aaa;
+}
+
+label, select {
+	display: block;
+}
+
+label,
+.wpcf7-list-item-label {
+    font-size: .875rem;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	max-height: 4rem;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+	width: 100%;
+	border: 1px solid #ddd;
+	padding: .5rem 1rem;
+	&:focus {
+		border-color: #eee;
+	}
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	line-height: normal;
+	cursor: pointer;
+}
+
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+}
+
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+
+}

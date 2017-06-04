@@ -1,0 +1,17 @@
+<ul class="nav-items">
+{% for item in menu.get_items %}
+	<li class="nav-item {{item.classes | join(' ')}}">
+		<a class="nav-item-link" href="{{item.link}}">{{item.title}}</a>
+	</li>
+{% endfor %}
+</ul>
+<p class="copyright">
+	Copyright {{"now"|date('Y')}} Niroflex USA, all rights reserved.<br><br>
+	P.O. Box 90 &nbsp; Deerfield, IL 60015 USA<br>
+	Tel: 1.847.400.2638 &nbsp; Fax: 1.847.919.3809<br>
+	E-mail: <a href="mailto:metalmesh@niroflex.com">metalmesh@niroflex.com</a>
+</p>
+
+<div id="request-info" class="white-popup mfp-hide">
+{{ popup_widgets }}
+</div>

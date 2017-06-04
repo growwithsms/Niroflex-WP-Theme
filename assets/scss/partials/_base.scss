@@ -1,0 +1,175 @@
+
+// ---
+// Base Site Styles
+// ---
+
+// Border box all the things:
+* {
+	 box-sizing: border-box;
+}
+
+// ---
+// General Selectors
+// ---
+
+
+// ---
+// Header
+// ---
+.site-header {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+}
+.site-logo {
+	margin: 0;
+	a {
+		display: block;
+		line-height: 0;
+	}
+}
+
+.nav-main-wrapper {
+	background: #fafafa;
+	padding: 1em 0;
+}
+
+// ---
+// Main Site Content
+// ---
+
+.wrapper {
+	max-width: $screen-md; // I'm using a pretty narrow wrapper, you might want this to be $screen-lg depending on your layout.
+	width: 93%;
+	margin: 0 auto;
+}
+.article-header {
+	color: #fff;
+	background-color: $red;
+	background-size: cover;
+	background-image: url('../img/hero-bg.jpg');
+	background-position: center;
+	position: relative;
+	padding-top: 1rem;
+	padding-bottom: 2rem;
+	&:after {
+		content: "";
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMzY2IDgxIj4gIDxwb2x5Z29uIHBvaW50cz0iMCA4MSAxMzY2IDgxIDEzNjYgMCAwIDgxIiBmaWxsPSIjZmZmIi8+PC9zdmc+);
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		width: 100%;
+		height: 81px;
+		background-size: cover;
+		background-position: bottom center;
+	}
+}
+
+
+// Home Page Template
+.hero {
+	color: #fff;
+	background-color: $red;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	padding-top: 3rem;
+	h1 {
+		margin-bottom: 0;
+	}
+	p {
+		margin-bottom: 1.5em;
+	}
+	&:after {
+	    content: "";
+	    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMzY2IDgxIj4gIDxwb2x5Z29uIHBvaW50cz0iMCA4MSAxMzY2IDgxIDEzNjYgMCAwIDgxIiBmaWxsPSIjZmZmIi8+PC9zdmc+);
+	    position: absolute;
+	    bottom: -1px;
+	    left: 0;
+	    width: 100%;
+	    height: 81px;
+	    background-size: cover;
+	    background-position: bottom center;
+	}
+}
+.customers .columns {
+    align-items: center;
+    text-align: center;
+}
+
+
+
+// Landing Page Template
+.landing-page-form {
+	form {
+	    padding: 1em;
+	    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.333);
+	    background: #fff;
+		p:first-of-type {
+			margin-top: 0;
+		}
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+}
+.page-template-template-landing-page {
+	.site-main {
+		position: relative;
+	}
+	h1 {
+		line-height: 1.2;
+	}
+	.angled-bg {
+	    @include bp(md) {
+		    margin-top: -18em;
+		}
+	}
+}
+
+
+// ---
+// Media
+// ---
+
+img,
+video,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+
+// ---
+// Footer
+// ---
+
+.angled-bg {
+	background: $red;
+	svg {
+		margin-top: -1px;
+	}
+}
+.site-footer {
+	background: $red;
+	color: $white;
+	padding: 1em 0;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	a { 
+		color: $white;
+		border: 3px solid transparent;
+		&:after {
+			background: $white;
+		}
+		&:hover,
+		&:focus {
+			border-color: $white;
+		}
+	}
+	.copyright {
+		font-size: .75rem;
+		margin-top: 2rem;
+	}
+}

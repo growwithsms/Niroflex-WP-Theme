@@ -1,0 +1,49 @@
+// ---
+// Buttons
+// ---
+
+// Default button
+.button:not(li),
+li.button a,
+input[type="submit"],
+button  {
+	background-color: $white;
+	color: $red;
+	padding: .6rem $size-base;
+	text-decoration: none;
+	border: 3px solid $red;
+	display: inline-block;
+	position: relative;
+	overflow: hidden !important;
+	z-index: 1;
+	&:after {
+		content:"";
+		background: $red;
+	    width: 100%;
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    height: 1px;
+	    transition: transform 200ms ease;
+	    transform-origin: bottom center;
+	    transform: scaleY(0);
+	    z-index: -1;
+	}
+	&:hover,
+	&:focus {
+		color: #fff;
+		&:after {
+			transform: scaleY(60);
+		}
+	}
+	&:active {
+		top: 0 !important;
+	}
+}
+
+input[type="submit"] {
+	&:focus,
+	&:hover {
+		background: $red;
+	}
+}

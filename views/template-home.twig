@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="hero" {% if post.hero_background %} style="background-image: url({{TimberImage(post.get_field('hero_background')).src}})" {% endif %}>
+		<div class="wrapper">
+			<div class="columns">
+				<div class="column">
+					<h1>{{post.title}}</h1>
+					<div class="article-body">
+						{{post.content}}
+					</div>
+				</div>
+				<div class="column">
+					<img src="{{post.thumbnail.src}}" alt="Image for {{post.title}}" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="customers">
+			<h2>{{ post.get_field('customers_header') }}</h2>
+			<div class="columns">
+				{% for customer in post.get_field('customers') %}
+			        <div class="column">
+			            <a href="{{customer.website}}"><img src="{{TimberImage(customer.logo).src}}" alt="{{customer.name}}" /></a>
+			        </div>
+			    {% endfor %}
+			</div>
+		</div>
+		<div class="features">
+			<h2>Features</h2>
+			<div class="columns">
+				<div class="column">
+					<div class="rotate-photos" id="rotate-photos">
+						<img id="rotate-photo" src="">
+						<div class="hidden">
+							{% for photo in post.get_field('360_rotate') %}
+					            <img src="{{TimberImage(photo.image).src}}" />
+						    {% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					{{ post.get_field('product_features') }}
+				</div>
+			</div>
+		</div>
+		<div class="additional">
+			{{ post.get_field('additional_details') }}
+		</div>
+	</div>
+
+{% endblock %}

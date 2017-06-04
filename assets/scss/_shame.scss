@@ -1,0 +1,98 @@
+// ---
+// Shameful Styles
+// ---
+// :(
+// Put all of the styles you are ashamed of in here. Everything where you're like, "ah, I know I shouldn't do it this way, but whatever for now". For example 
+// PAGE ANIMATIONS
+.page-animation-red {
+    background: $red;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    transition: transform 200ms ease;
+    transform-origin: bottom center;
+    transform: scaleY(0) translateY(0);
+}
+
+.is-exiting .page-animation-red {
+    transform: scaleY(10) translateY(-100%);
+}
+
+// POPUP
+.white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.popup-widget {
+    .columns {
+        margin-bottom: 0 !important;
+    }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+    > *:first-child {
+        margin-top: 0;
+        border-bottom: 2px solid $red;
+        margin-bottom: 1rem;
+    }
+}
+
+.mfp-close-btn-in .mfp-close:hover,
+.mfp-close-btn-in .mfp-close:focus {
+    color: #fff;
+}
+
+
+/* overlay at start */
+
+.mfp-fade.mfp-bg {
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+
+/* overlay animate in */
+
+.mfp-fade.mfp-bg.mfp-ready {
+    opacity: 0.8;
+}
+
+
+/* overlay animate out */
+
+.mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
+}
+
+
+/* content at start */
+
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    transition: all 0.15s ease .1s;
+    transform: translateY(-2em);
+}
+
+
+/* content animate it */
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* content animate out */
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+    transform: translateY(-2em);
+    transition: all 0.25s ease;
+}
