@@ -71,6 +71,7 @@ $(function() {
             anchors: 'a:not([href*="#"]):not([href$=".pdf"]):not([href$=".jpg"]):not([href$=".png"])',
             prefetch: true,
             cacheLength: 2,
+            blacklist: 'form, .no-smoothState',
             onStart: {
                 duration: 200, // Duration of our animation
                 render: function($container) {
