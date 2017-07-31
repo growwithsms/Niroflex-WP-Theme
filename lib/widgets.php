@@ -15,3 +15,13 @@ register_sidebar( array(
 	'before_title'  => '<h4>',
 	'after_title'   => '</h4>',
 ) );
+
+register_sidebar( array(
+	'name'          => 'Footer Widgets',
+	'id'            => 'footer_widgets',
+	'before_widget' => '<div class="footer-widget">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h4>',
+	'after_title'   => '</h4>',
+) );
+

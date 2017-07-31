@@ -13,18 +13,21 @@
 			</div>
 			<div class="article-body wrapper">
 				{{post.content}}
-				<div class="columns is-multiline">
-					{% for resource in post.get_field('resources') %}
-				        <div class="column is-one-third">
-				        	<a href="{{resource.url}}">
-					        	<figure class="text-center">
-						            <img src="{{TimberImage(resource.image).src('medium')}}" alt="{{resource.title}}">
-						            <figcaption>
-						            	<p>{{resource.title}}</p>
-						            </figcaption>
-						        </figure>
-						    </a>
-				        </div>
+				<div class="timeline">
+					{% for event in post.get_field('history') %}
+						<div class="timeline-event">
+				        	<div class="event-date">
+				        		<span>{{event.date}}</span>
+				        	</div>
+				        	<div class="event-info">
+					        	<h4 class="event-title">
+					        		{{event.title}}
+					        	</h4>
+					        	<div class="event-description">
+					        		{{event.description}}
+					        	</div>
+					        </div>
+						</div>
 				    {% endfor %}
 				</div>
 			</div>

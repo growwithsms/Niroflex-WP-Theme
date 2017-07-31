@@ -100,3 +100,6 @@ function my_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
 
+if ( ! isset( $content_width ) ) {
+    $content_width = 832;
+}

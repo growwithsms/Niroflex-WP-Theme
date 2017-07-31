@@ -10,6 +10,42 @@ $(function() {
     initPlugins();
     function initPlugins() {
 
+        // Smooth scroll to anchor links
+        $('a[href*="#"]')
+          // Remove links that don't actually link to anything
+          .not('[href="#"]')
+          .not('[href="#0"]')
+          .click(function(event) {
+            // On-page links
+            if (
+              location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+              && 
+              location.hostname == this.hostname
+            ) {
+              // Figure out element to scroll to
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              // Does a scroll target exist?
+              if (target.length) {
+                // Only prevent default if animation is actually gonna happen
+                event.preventDefault();
+                $('html, body').animate({
+                  scrollTop: target.offset().top
+                }, 1000, function() {
+                  // Callback after animation
+                  // Must change focus!
+                  var $target = $(target);
+                  $target.focus();
+                  if ($target.is(":focus")) { // Checking if the target was focused
+                    return false;
+                  } else {
+                    $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                    $target.focus(); // Set focus again
+                  };
+                });
+              }
+            }
+          });
         ////////////////////////////////////////
         // Mobile Menu
         ////////////////////////////////////////
@@ -63,10 +99,19 @@ $(function() {
         // build scene
         var scene = new ScrollMagic.Scene({ triggerElement: ".features", duration: 300 })
             .setTween(tween)
-            .addTo(controller);
+            .addTo(controller)
+            .offset(170);
 
+        // destroy controller if leaving home page
+        if( $('.home').length ) {
+            $('.nav-item-link').on('click', function() {
+                controller.destroy(true);
+                controller = null;
+            });
+        }
     };
 
+    // SmoothState.js - page transitions
     var options = {
             anchors: 'a:not([href*="#"]):not([href$=".pdf"]):not([href$=".jpg"]):not([href$=".png"])',
             prefetch: true,
@@ -91,6 +136,7 @@ $(function() {
 
                     // Restart your animation
                     smoothState.restartCSSAnimations();
+
                 }
             },
             onReady: {
@@ -115,6 +161,7 @@ $(function() {
                     'transition': 'transform 0',
                     'transform': ''
                 });
+
                 initPlugins();
             }
         },
