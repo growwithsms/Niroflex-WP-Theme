@@ -942,6 +942,7 @@
 .columns.is-multiline {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+      align-items: baseline;
 }
 
 .columns.is-vcentered {

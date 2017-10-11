@@ -13,7 +13,7 @@
 			</div>
 			<div class="article-body wrapper">
 				{{post.content}}
-				<div class="columns is-multiline">
+				<div class="columns is-multiline is-centered">
 					{% for resource in post.get_field('resources') %}
 				        <div class="column is-one-third">
 				        	<a href="{{resource.url}}">

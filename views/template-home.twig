@@ -14,33 +14,36 @@
 					<img src="{{post.thumbnail.src}}" alt="Image for {{post.title}}" />
 				</div>
 			</div>
+			<img src="/wp-content/themes/niroflex/assets/img/usda-badge.png" class="usda-badge" alt="USDA Approved">
 		</div>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 81" width="1366" height="81" class="header-angle">
 		    <polygon points="0 81 1366 81 1366 0 0 81" fill="#fff" />
 		</svg>
 	</div>
-	<div class="wrapper">
-		<div class="customers">
+	<div class="customers">
+		<div class="wrapper">
 			<h2>{{ post.get_field('customers_header') }}</h2>
-			<div class="columns">
-				{% for customer in post.get_field('customers') %}
-			        <div class="column">
-			            <a href="{{customer.website}}"><img src="{{TimberImage(customer.logo).src}}" alt="{{customer.name}}" /></a>
-			        </div>
-			    {% endfor %}
-			</div>
 		</div>
+		<div class="customer-logos">
+			{% for customer in post.get_field('customers') %}
+		        <div class="customer-logo">
+		            {# <a href="{{customer.website}}"> #}<img src="{{TimberImage(customer.logo).src}}" alt="{{customer.name}}" />{# </a> #}
+		        </div>
+		    {% endfor %}
+		</div>
+	</div>
+	<div class="wrapper">
 		<div class="features" id="features">
 			<h2>{{post.get_field('product_features_header')}}</h2>
 			<div class="columns">
 				<div class="column">
 					<div class="rotate-photos" id="rotate-photos">
-						<img id="rotate-photo" src="">
-						<div class="hidden">
+						<img src="/wp-content/uploads/2017/05/1_00030.jpg">
+						{# <div class="hidden">
 							{% for photo in post.get_field('360_rotate') %}
 					            <img src="{{TimberImage(photo.image).src}}" />
 						    {% endfor %}
-						</div>
+						</div> #}
 					</div>
 				</div>
 				<div class="column">

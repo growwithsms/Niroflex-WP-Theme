@@ -97,3 +97,23 @@
     transform: translateY(-2em);
     transition: all 0.25s ease;
 }
+
+
+.gallery {
+    @include bp(lg) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+label.preferred-supplier {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 200ms ease;
+}
+label.preferred-supplier.active {
+    opacity: 1;
+    visibility: visible;
+}

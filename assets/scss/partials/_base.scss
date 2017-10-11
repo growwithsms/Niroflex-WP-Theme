@@ -82,16 +82,33 @@
 	padding-top: 3rem;
 	h1 {
 		margin-bottom: 0;
+		line-height: 1.1;
 	}
 	p {
-		margin-bottom: 1.5em;
+		margin-bottom: 1em;
+	}
+	.usda-badge {
+	    position: absolute;
+	    right: 3rem;
+	    bottom: -1.5rem;
+	}
+	@include bp(lg) {
+		.column img {
+			margin-bottom: -1.25rem;
+		}
 	}
 }
 .customers .columns {
     align-items: center;
     text-align: center;
 }
-
+.customer-logo {
+    width: 170px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin: 0 2rem;
+}
 .features {
 	margin: $size-base*4 0;
 	li {
@@ -179,6 +196,9 @@
 	    @include bp(md) {
 		    margin-top: -18em;
 		}
+	}
+	.footer-widgets-wrapper {
+		display: none;
 	}
 }
 
