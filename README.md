@@ -1,5 +1,4 @@
-# Timber Starter Theme (Tackle Box version)
-
+# Niroflex Custom WordPress Theme
 With comments!
 
 ## What's here?
@@ -22,13 +21,3 @@ With comments!
 4. Activate the theme in Appearance >  Themes.
 5. You should see a notice that Timber needs to be activated; go to Plugins > All and activate both Timber and Advanced Custom Fields (ACF for short.)
 6. Set a static home page in Settings > Reading and choosing "A Static Page". This will automatically act as your home page and will reference the `views/front-page.twig` template.
-
-## Working in the Theme
-
-There is an example of a custom post type called "Cocktails". You can create your own at [generatewp.com](http://generatewp.com) and add that array to `lib/custom-types.php`.
-
-Custom Fields can be customized from the Custom Fields section in the Dashboard menu. 
-
-Read the notes in `views/page-content.twig` and `views/front-page.twig` for notes on using ACF in your templates, and general Twig info.
-
-## More soon!
